@@ -8,7 +8,8 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class YoutubeActivity extends YouTubeBaseActivity
+        implements YouTubePlayer.OnInitializedListener {
 
     private String GOOGLE_API_KEY = "AIzaSyBtsHhziXG1v6FbjGZejlt9T-sPadHOjYA";
     private String YOUTUBE_VIDEO_ID = "gCISR0T3grE";
@@ -45,10 +46,11 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
         youTubePlayer.setPlaybackEventListener(playbackEventListener);
         //if we are not coming back from the restore, we gonna play this video//
-        if (!wasRestored){
+        if (!wasRestored) {
             youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID); // the command to actually play the video, YOUTUBE_VIDEO_ID will point directly to which video wanna be played
         }
     }
+
     //
     private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
         @Override
